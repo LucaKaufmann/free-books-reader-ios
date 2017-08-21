@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Create windows with the screen sizes
         window = UIWindow(frame: UIScreen.main.bounds)
-        let homeViewController = UIViewController()
-        homeViewController.view.backgroundColor = UIColor.red
+        let homeViewController = ViewController()
+        homeViewController.view.backgroundColor = UIColor.white
         window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
         return true
