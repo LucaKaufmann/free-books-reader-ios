@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		400F11661F4B20A30049D00E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F11651F4B20A30049D00E /* AppDelegate.swift */; };
+		400F11681F4B20A30049D00E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F11671F4B20A30049D00E /* ViewController.swift */; };
+		400F116B1F4B20A30049D00E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400F11691F4B20A30049D00E /* Main.storyboard */; };
+		400F116E1F4B20A30049D00E /* FreeBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 400F116C1F4B20A30049D00E /* FreeBooks.xcdatamodeld */; };
+		400F11701F4B20A30049D00E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 400F116F1F4B20A30049D00E /* Assets.xcassets */; };
+		400F11731F4B20A30049D00E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400F11711F4B20A30049D00E /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		400F11621F4B20A30049D00E /* FreeBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		400F11651F4B20A30049D00E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		400F11671F4B20A30049D00E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		400F116A1F4B20A30049D00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		400F116D1F4B20A30049D00E /* FreeBooks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FreeBooks.xcdatamodel; sourceTree = "<group>"; };
+		400F116F1F4B20A30049D00E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		400F11721F4B20A30049D00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		400F11741F4B20A30049D00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		400F115F1F4B20A30049D00E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		400F11591F4B20A30049D00E = {
+			isa = PBXGroup;
+			children = (
+				400F11641F4B20A30049D00E /* FreeBooks */,
+				400F11631F4B20A30049D00E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		400F11631F4B20A30049D00E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				400F11621F4B20A30049D00E /* FreeBooks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		400F11641F4B20A30049D00E /* FreeBooks */ = {
+			isa = PBXGroup;
+			children = (
+				400F11651F4B20A30049D00E /* AppDelegate.swift */,
+				400F11671F4B20A30049D00E /* ViewController.swift */,
+				400F11691F4B20A30049D00E /* Main.storyboard */,
+				400F116F1F4B20A30049D00E /* Assets.xcassets */,
+				400F11711F4B20A30049D00E /* LaunchScreen.storyboard */,
+				400F11741F4B20A30049D00E /* Info.plist */,
+				400F116C1F4B20A30049D00E /* FreeBooks.xcdatamodeld */,
+			);
+			path = FreeBooks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		400F11611F4B20A30049D00E /* FreeBooks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 400F11771F4B20A30049D00E /* Build configuration list for PBXNativeTarget "FreeBooks" */;
+			buildPhases = (
+				400F115E1F4B20A30049D00E /* Sources */,
+				400F115F1F4B20A30049D00E /* Frameworks */,
+				400F11601F4B20A30049D00E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FreeBooks;
+			productName = FreeBooks;
+			productReference = 400F11621F4B20A30049D00E /* FreeBooks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		400F115A1F4B20A30049D00E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				TargetAttributes = {
+					400F11611F4B20A30049D00E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 3BKAAEFQ9S;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 400F115D1F4B20A30049D00E /* Build configuration list for PBXProject "FreeBooks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 400F11591F4B20A30049D00E;
+			productRefGroup = 400F11631F4B20A30049D00E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				400F11611F4B20A30049D00E /* FreeBooks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		400F11601F4B20A30049D00E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				400F11731F4B20A30049D00E /* LaunchScreen.storyboard in Resources */,
+				400F11701F4B20A30049D00E /* Assets.xcassets in Resources */,
+				400F116B1F4B20A30049D00E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		400F115E1F4B20A30049D00E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				400F116E1F4B20A30049D00E /* FreeBooks.xcdatamodeld in Sources */,
+				400F11681F4B20A30049D00E /* ViewController.swift in Sources */,
+				400F11661F4B20A30049D00E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		400F11691F4B20A30049D00E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				400F116A1F4B20A30049D00E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		400F11711F4B20A30049D00E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				400F11721F4B20A30049D00E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		400F11751F4B20A30049D00E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		400F11761F4B20A30049D00E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		400F11781F4B20A30049D00E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3BKAAEFQ9S;
+				INFOPLIST_FILE = FreeBooks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.FreeBooks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		400F11791F4B20A30049D00E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3BKAAEFQ9S;
+				INFOPLIST_FILE = FreeBooks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.org.FreeBooks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		400F115D1F4B20A30049D00E /* Build configuration list for PBXProject "FreeBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				400F11751F4B20A30049D00E /* Debug */,
+				400F11761F4B20A30049D00E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		400F11771F4B20A30049D00E /* Build configuration list for PBXNativeTarget "FreeBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				400F11781F4B20A30049D00E /* Debug */,
+				400F11791F4B20A30049D00E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		400F116C1F4B20A30049D00E /* FreeBooks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				400F116D1F4B20A30049D00E /* FreeBooks.xcdatamodel */,
+			);
+			currentVersion = 400F116D1F4B20A30049D00E /* FreeBooks.xcdatamodel */;
+			path = FreeBooks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 400F115A1F4B20A30049D00E /* Project object */;
+}
