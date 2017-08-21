@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07688356BFDFD7ECA7FE8DD7 /* Pods_FreeBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE7A68704E68E13CFD00A03 /* Pods_FreeBooks.framework */; };
 		400F11871F4B269D0049D00E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F11861F4B269D0049D00E /* AppDelegate.swift */; };
 		400F11891F4B269D0049D00E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F11881F4B269D0049D00E /* ViewController.swift */; };
 		400F118C1F4B269D0049D00E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400F118A1F4B269D0049D00E /* Main.storyboard */; };
@@ -24,6 +25,9 @@
 		400F11901F4B269D0049D00E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		400F11931F4B269D0049D00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		400F11951F4B269D0049D00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CB3E465CF3825174C9C2DD5 /* Pods-FreeBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.debug.xcconfig"; sourceTree = "<group>"; };
+		B1767CEF302046785DCB5A8E /* Pods-FreeBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.release.xcconfig"; sourceTree = "<group>"; };
+		BEE7A68704E68E13CFD00A03 /* Pods_FreeBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreeBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07688356BFDFD7ECA7FE8DD7 /* Pods_FreeBooks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				400F11851F4B269D0049D00E /* FreeBooks */,
 				400F11841F4B269D0049D00E /* Products */,
+				C380367655410AD92796A44C /* Pods */,
+				56BD2778F2871091188091AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = FreeBooks;
 			sourceTree = "<group>";
 		};
+		56BD2778F2871091188091AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEE7A68704E68E13CFD00A03 /* Pods_FreeBooks.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C380367655410AD92796A44C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CB3E465CF3825174C9C2DD5 /* Pods-FreeBooks.debug.xcconfig */,
+				B1767CEF302046785DCB5A8E /* Pods-FreeBooks.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 400F11981F4B269D0049D00E /* Build configuration list for PBXNativeTarget "FreeBooks" */;
 			buildPhases = (
+				DD7BB554F857AA4434EB8E22 /* [CP] Check Pods Manifest.lock */,
 				400F117F1F4B269D0049D00E /* Sources */,
 				400F11801F4B269D0049D00E /* Frameworks */,
 				400F11811F4B269D0049D00E /* Resources */,
+				80F154311918262F55BEA5F4 /* [CP] Embed Pods Frameworks */,
+				02A7CC34D365ECEFE92A5ACD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02A7CC34D365ECEFE92A5ACD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80F154311918262F55BEA5F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD7BB554F857AA4434EB8E22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		400F117F1F4B269D0049D00E /* Sources */ = {
@@ -264,6 +339,7 @@
 		};
 		400F11991F4B269D0049D00E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CB3E465CF3825174C9C2DD5 /* Pods-FreeBooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3BKAAEFQ9S;
@@ -277,6 +353,7 @@
 		};
 		400F119A1F4B269D0049D00E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1767CEF302046785DCB5A8E /* Pods-FreeBooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3BKAAEFQ9S;
