@@ -1,6 +1,0 @@
-version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "f872ac4115ec47d22b548a830f4465ff"
-build_time: [556639676, 933095000]
-inputs:
-  "/Users/lkau/Documents/git/free-books/FreeBooks/FreeBooks/ViewController.swift": [556639651, 0]
-  "/Users/lkau/Documents/git/free-books/FreeBooks/FreeBooks/AppDelegate.swift": [556639651, 0]
