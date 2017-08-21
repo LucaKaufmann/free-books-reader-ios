@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		07688356BFDFD7ECA7FE8DD7 /* Pods_FreeBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE7A68704E68E13CFD00A03 /* Pods_FreeBooks.framework */; };
+		12A6A7211F4B2C5500FC8F51 /* BooksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A6A7201F4B2C5500FC8F51 /* BooksListViewController.swift */; };
 		400F11871F4B269D0049D00E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F11861F4B269D0049D00E /* AppDelegate.swift */; };
 		400F11891F4B269D0049D00E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F11881F4B269D0049D00E /* ViewController.swift */; };
-		400F118C1F4B269D0049D00E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400F118A1F4B269D0049D00E /* Main.storyboard */; };
 		400F118F1F4B269D0049D00E /* FreeBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 400F118D1F4B269D0049D00E /* FreeBooks.xcdatamodeld */; };
 		400F11911F4B269D0049D00E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 400F11901F4B269D0049D00E /* Assets.xcassets */; };
-		400F11941F4B269D0049D00E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400F11921F4B269D0049D00E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12A6A7201F4B2C5500FC8F51 /* BooksListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksListViewController.swift; sourceTree = "<group>"; };
 		400F11831F4B269D0049D00E /* FreeBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		400F11861F4B269D0049D00E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		400F11881F4B269D0049D00E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		400F118B1F4B269D0049D00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		400F118E1F4B269D0049D00E /* FreeBooks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FreeBooks.xcdatamodel; sourceTree = "<group>"; };
 		400F11901F4B269D0049D00E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		400F11931F4B269D0049D00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		400F11951F4B269D0049D00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CB3E465CF3825174C9C2DD5 /* Pods-FreeBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.debug.xcconfig"; sourceTree = "<group>"; };
 		B1767CEF302046785DCB5A8E /* Pods-FreeBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,11 +63,10 @@
 			children = (
 				400F11861F4B269D0049D00E /* AppDelegate.swift */,
 				400F11881F4B269D0049D00E /* ViewController.swift */,
-				400F118A1F4B269D0049D00E /* Main.storyboard */,
 				400F11901F4B269D0049D00E /* Assets.xcassets */,
-				400F11921F4B269D0049D00E /* LaunchScreen.storyboard */,
 				400F11951F4B269D0049D00E /* Info.plist */,
 				400F118D1F4B269D0049D00E /* FreeBooks.xcdatamodeld */,
+				12A6A7201F4B2C5500FC8F51 /* BooksListViewController.swift */,
 			);
 			path = FreeBooks;
 			sourceTree = "<group>";
@@ -153,9 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				400F11941F4B269D0049D00E /* LaunchScreen.storyboard in Resources */,
 				400F11911F4B269D0049D00E /* Assets.xcassets in Resources */,
-				400F118C1F4B269D0049D00E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,31 +216,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				400F118F1F4B269D0049D00E /* FreeBooks.xcdatamodeld in Sources */,
+				12A6A7211F4B2C5500FC8F51 /* BooksListViewController.swift in Sources */,
 				400F11891F4B269D0049D00E /* ViewController.swift in Sources */,
 				400F11871F4B269D0049D00E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		400F118A1F4B269D0049D00E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				400F118B1F4B269D0049D00E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		400F11921F4B269D0049D00E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				400F11931F4B269D0049D00E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		400F11961F4B269D0049D00E /* Debug */ = {
@@ -390,6 +367,7 @@
 				400F119A1F4B269D0049D00E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
