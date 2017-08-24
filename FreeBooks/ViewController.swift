@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -18,6 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
+        fetchAllFreeEBooks()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -37,6 +39,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func fetchAllFreeEBooks() {
+        Alamofire.request(
+            URL(string: "https://www.googleapis.com/books/v1/volumes?q=filter=free-ebooks")!,
+            method: .get
+            )
+            .validate()
+            .responseJSON { (response) -> Void in
+                guard response.result.isSuccess else {
+                    debugPrint(response.result.error as Any)
+                    return
+                }
+                debugPrint(response)
+                
+        }
     }
 
 }
