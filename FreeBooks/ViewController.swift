@@ -14,6 +14,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var books = [[String:AnyObject]]()
     var tableView = UITableView()
+    
+    //For Pagination
+    var isDataLoading:Bool=false
+    var pageNo:Int=0
+    var startIndex:Int=0 //pageNo*limit
+    var didEndReached:Bool=false
+    
+    let maxResult = 40
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
-        fetchAllFreeEBooks()
+        fetchAllFreeEBooks(startIndex: startIndex)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -50,10 +58,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
-    func fetchAllFreeEBooks() {
+    func fetchAllFreeEBooks(startIndex: Int) {
+        print("fetch startIndex \(startIndex) with limit 40")
+        let parameters: Parameters = [
+            "maxResults": maxResult,
+            "startIndex": startIndex
+        ]
         Alamofire.request(
             URL(string: "https://www.googleapis.com/books/v1/volumes?q=filter=free-ebooks")!,
-            method: .get
+            method: .get,
+            parameters: parameters
             )
             .validate()
             .responseJSON { (response) -> Void in
@@ -73,6 +87,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
                 
         }
+    }
+    
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isDataLoading = false
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("scrollViewDidEndDecelerating")
+    }
+    
+    //Pagination
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        print("startIndex \(startIndex)")
+        
+        if ((tableView.contentOffset.y + tableView.frame.size.height) >= tableView.contentSize.height)
+        {
+            if !isDataLoading{
+                print("pageNo \(pageNo)")
+                isDataLoading = true
+                self.pageNo=self.pageNo+1
+                self.startIndex = self.pageNo * self.maxResult + 1
+                fetchAllFreeEBooks(startIndex: self.startIndex)
+                
+            }
+        }
+        
+        
     }
 
 }
