@@ -8,14 +8,16 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var books = ["funny", "boring", "doing"]
+    var books = [[String:AnyObject]]()
+    var tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tableView = UITableView(frame: view.bounds, style: UITableViewStyle.grouped)
+        tableView = UITableView(frame: view.bounds, style: UITableViewStyle.grouped)
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
@@ -31,9 +33,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = BookItemView(style: UITableViewCellStyle.default, reuseIdentifier: "myIdentifier")
-        cell.title?.text = books[indexPath.row]
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "myIdentifier")
+        var volumeInfoDict = books[indexPath.row]
+    
+        cell.textLabel?.text = volumeInfoDict["volumeInfo"]?["title"] as? String
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let bookDict = books[indexPath.row]
+        UIApplication.shared.open(URL(string: bookDict["volumeInfo"]?["infoLink"] as! String)!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +61,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     debugPrint(response.result.error as Any)
                     return
                 }
-                debugPrint(response)
+                let swiftyJsonVar = JSON(response.result.value!)
+                //debugPrint(swiftyJsonVar)
+                
+                if let resData = swiftyJsonVar["items"].arrayObject {
+                    self.books = resData as! [[String:AnyObject]]
+                }
+                if self.books.count > 0 {
+                    self.tableView.reloadData()
+                    print(self.books.count)
+                }
                 
         }
     }

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		07688356BFDFD7ECA7FE8DD7 /* Pods_FreeBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE7A68704E68E13CFD00A03 /* Pods_FreeBooks.framework */; };
-		12A6A7211F4B2C5500FC8F51 /* BooksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A6A7201F4B2C5500FC8F51 /* BooksListViewController.swift */; };
-		12A6A7231F4B6CC500FC8F51 /* BookItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A6A7221F4B6CC500FC8F51 /* BookItemView.swift */; };
 		400F11871F4B269D0049D00E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F11861F4B269D0049D00E /* AppDelegate.swift */; };
 		400F11891F4B269D0049D00E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F11881F4B269D0049D00E /* ViewController.swift */; };
 		400F118F1F4B269D0049D00E /* FreeBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 400F118D1F4B269D0049D00E /* FreeBooks.xcdatamodeld */; };
@@ -17,8 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12A6A7201F4B2C5500FC8F51 /* BooksListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksListViewController.swift; sourceTree = "<group>"; };
-		12A6A7221F4B6CC500FC8F51 /* BookItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookItemView.swift; sourceTree = "<group>"; };
 		400F11831F4B269D0049D00E /* FreeBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		400F11861F4B269D0049D00E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		400F11881F4B269D0049D00E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,8 +64,6 @@
 				400F11901F4B269D0049D00E /* Assets.xcassets */,
 				400F11951F4B269D0049D00E /* Info.plist */,
 				400F118D1F4B269D0049D00E /* FreeBooks.xcdatamodeld */,
-				12A6A7201F4B2C5500FC8F51 /* BooksListViewController.swift */,
-				12A6A7221F4B6CC500FC8F51 /* BookItemView.swift */,
 			);
 			path = FreeBooks;
 			sourceTree = "<group>";
@@ -210,7 +204,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -220,9 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12A6A7231F4B6CC500FC8F51 /* BookItemView.swift in Sources */,
 				400F118F1F4B269D0049D00E /* FreeBooks.xcdatamodeld in Sources */,
-				12A6A7211F4B2C5500FC8F51 /* BooksListViewController.swift in Sources */,
 				400F11891F4B269D0049D00E /* ViewController.swift in Sources */,
 				400F11871F4B269D0049D00E /* AppDelegate.swift in Sources */,
 			);
