@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var pageNo:Int=0
     var startIndex:Int=0 //pageNo*limit
     var didEndReached:Bool=false
-    
+    var totalItems: Int = 0
     let maxResult = 40
 
     override func viewDidLoad() {
@@ -79,11 +79,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 //debugPrint(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar["items"].arrayObject {
-                    self.books = resData as! [[String:AnyObject]]
+                    self.books += resData as! [[String:AnyObject]]
                 }
+                
+                if let totalItems = swiftyJsonVar["totalItems"].int {
+                    self.totalItems = totalItems
+                }
+                
                 if self.books.count > 0 {
                     self.tableView.reloadData()
-                    print(self.books.count)
+                    print("Books: \(self.books.count)")
                 }
                 
         }
@@ -100,16 +105,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //Pagination
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-        print("startIndex \(startIndex)")
+
         
         if ((tableView.contentOffset.y + tableView.frame.size.height) >= tableView.contentSize.height)
         {
-            if !isDataLoading{
+            if (!isDataLoading && books.count <= self.totalItems - 1) {
                 print("pageNo \(pageNo)")
+                print("total items \(self.totalItems)")
                 isDataLoading = true
                 self.pageNo=self.pageNo+1
                 self.startIndex = self.pageNo * self.maxResult + 1
+                print("startIndex \(startIndex)")
                 fetchAllFreeEBooks(startIndex: self.startIndex)
                 
             }
