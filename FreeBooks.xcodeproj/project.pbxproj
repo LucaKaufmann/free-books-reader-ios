@@ -13,6 +13,7 @@
 		400F118F1F4B269D0049D00E /* FreeBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 400F118D1F4B269D0049D00E /* FreeBooks.xcdatamodeld */; };
 		400F11911F4B269D0049D00E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 400F11901F4B269D0049D00E /* Assets.xcassets */; };
 		400F11941F4B269D0049D00E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 400F11921F4B269D0049D00E /* LaunchScreen.storyboard */; };
+		407D36671F56F5FC00C75502 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407D36661F56F5FC00C75502 /* BookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		400F11901F4B269D0049D00E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		400F11931F4B269D0049D00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		400F11951F4B269D0049D00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		407D36661F56F5FC00C75502 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		5CB3E465CF3825174C9C2DD5 /* Pods-FreeBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.debug.xcconfig"; sourceTree = "<group>"; };
 		B1767CEF302046785DCB5A8E /* Pods-FreeBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.release.xcconfig"; sourceTree = "<group>"; };
 		BEE7A68704E68E13CFD00A03 /* Pods_FreeBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreeBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 		400F11851F4B269D0049D00E /* FreeBooks */ = {
 			isa = PBXGroup;
 			children = (
+				407D36661F56F5FC00C75502 /* BookCell.swift */,
 				400F11861F4B269D0049D00E /* AppDelegate.swift */,
 				400F11881F4B269D0049D00E /* ViewController.swift */,
 				400F11901F4B269D0049D00E /* Assets.xcassets */,
@@ -206,7 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407D36671F56F5FC00C75502 /* BookCell.swift in Sources */,
 				400F118F1F4B269D0049D00E /* FreeBooks.xcdatamodeld in Sources */,
 				400F11891F4B269D0049D00E /* ViewController.swift in Sources */,
 				400F11871F4B269D0049D00E /* AppDelegate.swift in Sources */,
