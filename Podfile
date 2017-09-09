@@ -9,5 +9,6 @@ target 'FreeBooks' do
   
   # Pods for FreeBooks
   pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON', '~> 3.1.4'
   
 end
