@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class BooksApiClient {
     
+    let freeBooksString = "https://www.googleapis.com/books/v1/volumes?q=filter=free-ebooks"
     
     func fetchFreeBooksList() {
         Alamofire.request(
@@ -29,7 +30,7 @@ class BooksApiClient {
         }
     }
     func fetchFreeBooksSwifty() {
-        Alamofire.request("https://www.googleapis.com/books/v1/volumes?q=filter=free-ebooks").responseJSON { (responseData) -> Void in
+        Alamofire.request(freeBooksString).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
                 let swiftyJsonVar = JSON(responseData.result.value!)
                 print("SwiftyJSON books")
@@ -38,5 +39,14 @@ class BooksApiClient {
             }
         }
     }
+    
+    func fetchBooks(completion: (Bool, responseData) -> Void) {
+        
+    }
+    
+    func hardProcessingWithString(input: String, completion: (String) -> Void) {
+        completion("we finished!")
+    }
+    
 }
 
