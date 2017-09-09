@@ -28,17 +28,19 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
         collectionView.delegate = self
         collectionView.register(BookCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.backgroundColor = UIColor.white
+        
+        self.fetchAllFreeEBooks()
         self.view.addSubview(collectionView)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 14
+        return books.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! BookCell
         let imageView = UIImageView()
-        cell.backgroundView = imageView
+        
         let bookDict = books[indexPath.row]
         let volumeInfoDict = bookDict["volumeInfo"] as! [String:AnyObject]
         let imageLinksDict = volumeInfoDict["imageLinks"] as! [String:AnyObject]
@@ -47,7 +49,8 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
                 // Handle error
                 return
             }
-            cell.backgroundView.image = image
+            imageView.image = image
+            cell.backgroundView = imageView
         }
         cell.backgroundColor = UIColor.orange
         return cell
