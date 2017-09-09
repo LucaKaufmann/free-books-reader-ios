@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
-class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
  
     var collectionView: UICollectionView!
     var books = [[String:AnyObject]]()
