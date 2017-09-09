@@ -12,6 +12,8 @@
 		400F11891F4B269D0049D00E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F11881F4B269D0049D00E /* ViewController.swift */; };
 		400F118F1F4B269D0049D00E /* FreeBooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 400F118D1F4B269D0049D00E /* FreeBooks.xcdatamodeld */; };
 		400F11911F4B269D0049D00E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 400F11901F4B269D0049D00E /* Assets.xcassets */; };
+		40A251501F63F6A000AE199A /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A2514E1F63F6A000AE199A /* BookCell.swift */; };
+		40A251511F63F6A000AE199A /* BookUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A2514F1F63F6A000AE199A /* BookUICollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		400F118E1F4B269D0049D00E /* FreeBooks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FreeBooks.xcdatamodel; sourceTree = "<group>"; };
 		400F11901F4B269D0049D00E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		400F11951F4B269D0049D00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40A2514E1F63F6A000AE199A /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		40A2514F1F63F6A000AE199A /* BookUICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookUICollectionView.swift; sourceTree = "<group>"; };
 		5CB3E465CF3825174C9C2DD5 /* Pods-FreeBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.debug.xcconfig"; sourceTree = "<group>"; };
 		B1767CEF302046785DCB5A8E /* Pods-FreeBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.release.xcconfig"; sourceTree = "<group>"; };
 		BEE7A68704E68E13CFD00A03 /* Pods_FreeBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreeBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,8 @@
 		400F11851F4B269D0049D00E /* FreeBooks */ = {
 			isa = PBXGroup;
 			children = (
+				40A2514E1F63F6A000AE199A /* BookCell.swift */,
+				40A2514F1F63F6A000AE199A /* BookUICollectionView.swift */,
 				400F11861F4B269D0049D00E /* AppDelegate.swift */,
 				400F11881F4B269D0049D00E /* ViewController.swift */,
 				400F11901F4B269D0049D00E /* Assets.xcassets */,
@@ -214,8 +220,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40A251501F63F6A000AE199A /* BookCell.swift in Sources */,
 				400F118F1F4B269D0049D00E /* FreeBooks.xcdatamodeld in Sources */,
 				400F11891F4B269D0049D00E /* ViewController.swift in Sources */,
+				40A251511F63F6A000AE199A /* BookUICollectionView.swift in Sources */,
 				400F11871F4B269D0049D00E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
