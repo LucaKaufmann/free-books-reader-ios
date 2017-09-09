@@ -10,4 +10,8 @@ import UIKit
 
 class BookCell: UICollectionViewCell {
 
+    
+    override func prepareForReuse() {
+        self.backgroundView = UIImageView()
+    }
 }

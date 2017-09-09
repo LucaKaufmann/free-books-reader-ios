@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //For Pagination
     var isDataLoading:Bool=false
-    var pageNo:Int=0
     var startIndex:Int=0 //pageNo*limit
     var didEndReached:Bool=false
     var totalItems: Int = 0
@@ -45,6 +44,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var volumeInfoDict = books[indexPath.row]
     
         cell.textLabel?.text = volumeInfoDict["volumeInfo"]?["title"] as? String
+        
+        // See if we need to load more books
+        let rowsToLoadFromBottom = 5;
+        let rowsLoaded = books.count
+        if (!self.isDataLoading && (indexPath.row >= (rowsLoaded - rowsToLoadFromBottom))) {
+            let totalRows = self.totalItems
+            let remainingSpeciesToLoad = totalRows - rowsLoaded;
+            if (remainingSpeciesToLoad > 0) {
+                isDataLoading = true
+                self.startIndex = self.startIndex + self.maxResult
+                print("startIndex \(startIndex)")
+                fetchAllFreeEBooks(startIndex: self.startIndex)
+            }
+        }
+        
         return cell
     }
     
@@ -89,40 +103,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if self.books.count > 0 {
                     self.tableView.reloadData()
                     print("Books: \(self.books.count)")
+                    print("Total Items: \(self.totalItems)")
                 }
                 
+                self.isDataLoading = false
+                
         }
-    }
-    
-    
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        isDataLoading = false
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print("scrollViewDidEndDecelerating")
     }
     
     //Pagination
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-
-        
-        if ((tableView.contentOffset.y + tableView.frame.size.height) >= tableView.contentSize.height)
-        {
-            if (!isDataLoading && books.count <= self.totalItems - 1) {
-                print("pageNo \(pageNo)")
-                print("total items \(self.totalItems)")
-                isDataLoading = true
-                self.pageNo=self.pageNo+1
-                self.startIndex = self.pageNo * self.maxResult + 1
-                print("startIndex \(startIndex)")
-                fetchAllFreeEBooks(startIndex: self.startIndex)
-                
-            }
-        }
-        
-        
-    }
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//
+//        
+//        if ((tableView.contentOffset.y + tableView.frame.size.height) >= tableView.contentSize.height)
+//        {
+//            if (!isDataLoading && books.count <= self.totalItems - 1) {
+//                print("books count \(books.count)")
+//                print("total items \(self.totalItems)")
+//                isDataLoading = true
+//                self.startIndex = self.startIndex + self.maxResult
+//                print("startIndex \(startIndex)")
+//                fetchAllFreeEBooks(startIndex: self.startIndex)
+//                
+//            }
+//        }
+//        
+//        
+//    }
 
 }
 

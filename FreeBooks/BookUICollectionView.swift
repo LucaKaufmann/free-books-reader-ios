@@ -16,6 +16,12 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
     var collectionView: UICollectionView!
     var books = [[String:AnyObject]]()
     
+    var isDataLoading:Bool=false
+    var startIndex:Int=0 //pageNo*limit
+    var didEndReached:Bool=false
+    var totalItems: Int = 0
+    let maxResult = 40
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,7 +35,7 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
         collectionView.register(BookCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.backgroundColor = UIColor.white
         
-        self.fetchAllFreeEBooks()
+        fetchAllFreeEBooks(startIndex: startIndex)
         self.view.addSubview(collectionView)
     }
 
@@ -43,16 +49,30 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
         
         let bookDict = books[indexPath.row]
         let volumeInfoDict = bookDict["volumeInfo"] as! [String:AnyObject]
-        let imageLinksDict = volumeInfoDict["imageLinks"] as! [String:AnyObject]
-        Alamofire.request(imageLinksDict["thumbnail"] as! String, method: .get).responseImage { response in
-            guard let image = response.result.value else {
-                // Handle error
-                return
+        if let imageLinksDict = volumeInfoDict["imageLinks"] as? [String:AnyObject] {
+            Alamofire.request(imageLinksDict["thumbnail"] as! String, method: .get).responseImage { response in
+                guard let image = response.result.value else {
+                    // Handle error
+                    return
+                }
+                imageView.image = image
+                cell.backgroundView = imageView
             }
-            imageView.image = image
-            cell.backgroundView = imageView
         }
-        cell.backgroundColor = UIColor.orange
+        
+        // See if we need to load more books
+        let rowsToLoadFromBottom = 5;
+        let rowsLoaded = books.count
+        if (!self.isDataLoading && (indexPath.row >= (rowsLoaded - rowsToLoadFromBottom))) {
+            let totalRows = self.totalItems
+            let remainingSpeciesToLoad = totalRows - rowsLoaded;
+            if (remainingSpeciesToLoad > 0) {
+                isDataLoading = true
+                self.startIndex = self.startIndex + self.maxResult
+                print("startIndex \(startIndex)")
+                fetchAllFreeEBooks(startIndex: self.startIndex)
+            }
+        }
         return cell
     }
 
@@ -60,12 +80,17 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
-    func fetchAllFreeEBooks() {
+    func fetchAllFreeEBooks(startIndex: Int) {
+        print("fetch startIndex \(startIndex) with limit 40")
+        let parameters: Parameters = [
+            "maxResults": maxResult,
+            "startIndex": startIndex
+        ]
         Alamofire.request(
             URL(string: "https://www.googleapis.com/books/v1/volumes?q=filter=free-ebooks")!,
-            method: .get
+            method: .get,
+            parameters: parameters
             )
             .validate()
             .responseJSON { (response) -> Void in
@@ -74,16 +99,27 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
                     return
                 }
                 let swiftyJsonVar = JSON(response.result.value!)
+                //debugPrint(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar["items"].arrayObject {
-                    self.books = resData as! [[String:AnyObject]]
+                    self.books += resData as! [[String:AnyObject]]
                 }
+                
+                if let totalItems = swiftyJsonVar["totalItems"].int {
+                    self.totalItems = totalItems
+                }
+                
                 if self.books.count > 0 {
                     self.collectionView.reloadData()
+                    print("Books: \(self.books.count)")
+                    print("Total Items: \(self.totalItems)")
                 }
+                
+                self.isDataLoading = false
                 
         }
     }
+
     
     func fetchThumbnail(url: String) {
         Alamofire.request(url, method: .get).responseImage { response in
