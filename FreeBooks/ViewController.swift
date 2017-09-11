@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var books = [[String:AnyObject]]()
+    var books = [Book]()
     var tableView = UITableView()
     
     //For Pagination
@@ -41,9 +41,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "myIdentifier")
-        var volumeInfoDict = books[indexPath.row]
+        let book = books[indexPath.row]
     
-        cell.textLabel?.text = volumeInfoDict["volumeInfo"]?["title"] as? String
+        cell.textLabel?.text = book.title
         
         // See if we need to load more books
         let rowsToLoadFromBottom = 5;
@@ -63,8 +63,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let bookDict = books[indexPath.row]
-        UIApplication.shared.open(URL(string: bookDict["volumeInfo"]?["infoLink"] as! String)!)
+        let book = books[indexPath.row]
+        UIApplication.shared.open(URL(string: book.link!)!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,7 +93,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 //debugPrint(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar["items"].arrayObject {
-                    self.books += resData as! [[String:AnyObject]]
+                    
+//                    self.books += resData as! [[String:AnyObject]]
+                    for bookItem in resData {
+                        self.books.append(Book.init(bookDict: bookItem as! [String: AnyObject]))
+                    }
                 }
                 
                 if let totalItems = swiftyJsonVar["totalItems"].int {
