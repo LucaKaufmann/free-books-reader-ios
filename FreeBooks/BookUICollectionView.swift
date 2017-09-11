@@ -14,7 +14,7 @@ import SwiftyJSON
 class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
  
     var collectionView: UICollectionView!
-    var books = [[String:AnyObject]]()
+    var books = [Book]()
     
     var isDataLoading:Bool=false
     var startIndex:Int=0 //pageNo*limit
@@ -47,18 +47,16 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! BookCell
         let imageView = UIImageView()
         
-        let bookDict = books[indexPath.row]
-        let volumeInfoDict = bookDict["volumeInfo"] as! [String:AnyObject]
-        if let imageLinksDict = volumeInfoDict["imageLinks"] as? [String:AnyObject] {
-            Alamofire.request(imageLinksDict["thumbnail"] as! String, method: .get).responseImage { response in
-                guard let image = response.result.value else {
-                    // Handle error
-                    return
-                }
-                imageView.image = image
-                cell.backgroundView = imageView
+        let book = books[indexPath.row]
+        Alamofire.request(book.thumbnailLink!, method: .get).responseImage { response in
+            guard let image = response.result.value else {
+                // Handle error
+                return
             }
+            imageView.image = image
+            cell.backgroundView = imageView
         }
+        
         
         // See if we need to load more books
         let rowsToLoadFromBottom = 5;
@@ -102,7 +100,11 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
                 //debugPrint(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar["items"].arrayObject {
-                    self.books += resData as! [[String:AnyObject]]
+                    //self.books += resData as! [[String:AnyObject]]
+                    
+                    for bookItem in resData {
+                        self.books.append(Book.init(bookDict: bookItem as! [String: AnyObject]))
+                    }
                 }
                 
                 if let totalItems = swiftyJsonVar["totalItems"].int {
