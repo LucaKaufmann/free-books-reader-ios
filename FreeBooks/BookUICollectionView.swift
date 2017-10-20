@@ -8,42 +8,55 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+ 
+    var collectionView: UICollectionView!
     var books = [Book]()
-    var tableView = UITableView()
     
-    //For Pagination
     var isDataLoading:Bool=false
     var startIndex:Int=0 //pageNo*limit
     var didEndReached:Bool=false
     var totalItems: Int = 0
     let maxResult = 40
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView = UITableView(frame: view.bounds, style: UITableViewStyle.grouped)
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
+        // Do any additional setup after loading the view, typically from a nib.
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 90, height: 120)
+        
+        collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(BookCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.backgroundColor = UIColor.white
+        
         fetchAllFreeEBooks(startIndex: startIndex)
+        self.view.addSubview(collectionView)
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return books.count
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "myIdentifier")
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! BookCell
+        let imageView = UIImageView()
+        
         let book = books[indexPath.row]
-    
-        cell.textLabel?.text = book.title
+        Alamofire.request(book.thumbnailLink!, method: .get).responseImage { response in
+            guard let image = response.result.value else {
+                // Handle error
+                return
+            }
+            imageView.image = image
+            cell.backgroundView = imageView
+        }
+        
         
         // See if we need to load more books
         let rowsToLoadFromBottom = 5;
@@ -58,15 +71,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 fetchAllFreeEBooks(startIndex: self.startIndex)
             }
         }
-        
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let book = books[indexPath.row]
-        UIApplication.shared.open(URL(string: book.link!)!)
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,8 +100,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 //debugPrint(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar["items"].arrayObject {
+                    //self.books += resData as! [[String:AnyObject]]
                     
-//                    self.books += resData as! [[String:AnyObject]]
                     for bookItem in resData {
                         self.books.append(Book.init(bookDict: bookItem as! [String: AnyObject]))
                     }
@@ -105,7 +112,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
                 
                 if self.books.count > 0 {
-                    self.tableView.reloadData()
+                    self.collectionView.reloadData()
                     print("Books: \(self.books.count)")
                     print("Total Items: \(self.totalItems)")
                 }
@@ -114,26 +121,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
         }
     }
+
     
-    //Pagination
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//
-//        
-//        if ((tableView.contentOffset.y + tableView.frame.size.height) >= tableView.contentSize.height)
-//        {
-//            if (!isDataLoading && books.count <= self.totalItems - 1) {
-//                print("books count \(books.count)")
-//                print("total items \(self.totalItems)")
-//                isDataLoading = true
-//                self.startIndex = self.startIndex + self.maxResult
-//                print("startIndex \(startIndex)")
-//                fetchAllFreeEBooks(startIndex: self.startIndex)
-//                
-//            }
-//        }
-//        
-//        
-//    }
+    func fetchThumbnail(url: String) {
+        Alamofire.request(url, method: .get).responseImage { response in
+            guard let image = response.result.value else {
+                // Handle error
+                return
+            }
+            // Do stuff with your image
+        }
+    }
 
 }
 
