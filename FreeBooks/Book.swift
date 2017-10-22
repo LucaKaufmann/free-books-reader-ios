@@ -21,9 +21,12 @@ class Book {
     var highResThumbnailLink: String?
     var epubDownloadLink: String?
     var pdfDownloadLink: String?
+    var readerLink: String?
     
     init(bookDict: [String:AnyObject]) {
         let volumeInfoDict = bookDict["volumeInfo"]
+        let accessInfoDict = bookDict["accessInfo"]
+        let epubDict = accessInfoDict?["epub"] as? [String:AnyObject]
         let imageLinksDict = volumeInfoDict?["imageLinks"] as? [String:AnyObject]
         
         title = volumeInfoDict?["title"] as? String
@@ -37,8 +40,18 @@ class Book {
         ratingsCount = volumeInfoDict?["ratingsCount"] as? Int
         thumbnailLink = imageLinksDict?["thumbnail"] as? String
         highResThumbnailLink = thumbnailLink //todo
-        epubDownloadLink = "todo" //todo
+        
+        
+        let epubAvailable = epubDict?["isAvailable"] as! Bool
+        if (epubAvailable) {
+            epubDownloadLink = epubDict?["downloadLink"] as? String
+        } else {
+            epubDownloadLink = "todo" //todo
+        }
+        
         pdfDownloadLink = "todo" //todo
+        
+        readerLink = accessInfoDict?["webReaderLink"] as? String
     }
     
     

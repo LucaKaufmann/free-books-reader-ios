@@ -16,6 +16,7 @@
 		40A251511F63F6A000AE199A /* BookUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A2514F1F63F6A000AE199A /* BookUICollectionView.swift */; };
 		40C07DC91F66FE10009CD8EE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C07DC81F66FE10009CD8EE /* Book.swift */; };
 		40E751BE1F63FBD2006465B3 /* BooksTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E751BD1F63FBD2006465B3 /* BooksTabBarViewController.swift */; };
+		81E1C83F1F9C7E9200553AB4 /* BookReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1C83E1F9C7E9200553AB4 /* BookReaderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		40C07DC81F66FE10009CD8EE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		40E751BD1F63FBD2006465B3 /* BooksTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksTabBarViewController.swift; sourceTree = "<group>"; };
 		5CB3E465CF3825174C9C2DD5 /* Pods-FreeBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.debug.xcconfig"; sourceTree = "<group>"; };
+		81E1C83E1F9C7E9200553AB4 /* BookReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookReaderViewController.swift; path = "/Users/luca/git/free-books-reader-ios/FreeBooks/BookReaderViewController.swift"; sourceTree = "<absolute>"; };
 		B1767CEF302046785DCB5A8E /* Pods-FreeBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreeBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreeBooks/Pods-FreeBooks.release.xcconfig"; sourceTree = "<group>"; };
 		BEE7A68704E68E13CFD00A03 /* Pods_FreeBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreeBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 		400F11851F4B269D0049D00E /* FreeBooks */ = {
 			isa = PBXGroup;
 			children = (
+				81E1C83E1F9C7E9200553AB4 /* BookReaderViewController.swift */,
 				40E751BD1F63FBD2006465B3 /* BooksTabBarViewController.swift */,
 				40A2514E1F63F6A000AE199A /* BookCell.swift */,
 				40A2514F1F63F6A000AE199A /* BookUICollectionView.swift */,
@@ -131,7 +134,7 @@
 				TargetAttributes = {
 					400F11821F4B269D0049D00E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 3BKAAEFQ9S;
+						DevelopmentTeam = 6Y9C574C9M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -234,6 +237,7 @@
 				400F118F1F4B269D0049D00E /* FreeBooks.xcdatamodeld in Sources */,
 				400F11891F4B269D0049D00E /* ViewController.swift in Sources */,
 				40A251511F63F6A000AE199A /* BookUICollectionView.swift in Sources */,
+				81E1C83F1F9C7E9200553AB4 /* BookReaderViewController.swift in Sources */,
 				400F11871F4B269D0049D00E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,8 +345,9 @@
 			baseConfigurationReference = 5CB3E465CF3825174C9C2DD5 /* Pods-FreeBooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3BKAAEFQ9S;
+				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				INFOPLIST_FILE = FreeBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.org.FreeBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,8 +360,9 @@
 			baseConfigurationReference = B1767CEF302046785DCB5A8E /* Pods-FreeBooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3BKAAEFQ9S;
+				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				INFOPLIST_FILE = FreeBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.org.FreeBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";

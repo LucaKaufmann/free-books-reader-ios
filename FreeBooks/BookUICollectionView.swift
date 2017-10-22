@@ -73,6 +73,15 @@ class BookCollectionView: UIViewController, UICollectionViewDelegateFlowLayout, 
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let book = books[indexPath.row]
+        
+        let webViewController = BookReaderViewController.init(bookLink: book.readerLink!)
+        webViewController.modalPresentationStyle = .popover
+        self.present(webViewController, animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

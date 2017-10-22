@@ -12,13 +12,15 @@ class BooksTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableViewController = ViewController()
-        tableViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-        
         let uiCollectionViewController = BookCollectionView()
-        uiCollectionViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostRecent, tag: 1)
+        uiCollectionViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .mostRecent, tag: 0)
+        
+        let tableViewController = ViewController()
+        tableViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        
+        
 
-        let viewControllerList = [ tableViewController, uiCollectionViewController ]
+        let viewControllerList = [ uiCollectionViewController, tableViewController ]
         viewControllers = viewControllerList
         // Do any additional setup after loading the view.
     }
